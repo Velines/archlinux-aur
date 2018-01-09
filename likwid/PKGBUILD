@@ -17,8 +17,8 @@ md5sums=('ff28250f622185688bf5e2e0975368ea')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
-  sed -i "12s:/usr/local:/usr:; 25s:/man:/share/man:; 48s:/sbin:/bin:; 49s:/sbin:/bin:" config.mk 
-  sed -i "s:/usr/local:/usr:" likwid-perfctr 
+  sed -i "s:/usr/local:/usr:; s:/man:/share/man:; s:/sbin:/bin:; s:/sbin:/bin:" config.mk
+  sed -i "s:/usr/local:/usr:" ext/lua/includes/luaconf.h
   sed -i "s:/sbin:/bin:" Makefile
   make
 }
